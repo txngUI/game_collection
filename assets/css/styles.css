@@ -93,3 +93,11 @@ footer {
   align-items: center;
   justify-content: center;
 }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 520px;
+  height: 55px;
+}
