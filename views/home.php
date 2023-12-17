@@ -7,17 +7,6 @@
   <title>Game Collection | Home</title>
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <p>Game Collection</p>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Ma bibliothèque</a></li>
-      <li><a href="#">Ajouter un jeu</a></li>
-      <li><a href="#">Classement</a></li>
-      <li><a href="#">Profil</a></li>
-    </ul>
-  </nav>
   <div class="container">
     <div class="header">
       <p>salut guillaume ! <br> prêt à ajouter des <br> jeux à ta collection ?</p>
@@ -64,8 +53,5 @@
       </div> 
     </div>
   </div>
-  <footer>
-    Game Collection - 2023 - Tous droits réservés
-  </footer>
 </body>
 </html>

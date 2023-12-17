@@ -5,11 +5,23 @@ $dotenv->load();
 
 if (isset($_GET['action'])) {
   if ($_GET['action'] == 'register') {
-    require 'views/inscription.php';
+    require 'controllers/inscription.php';
   } else if ($_GET['action'] == 'home') {
-    require 'views/home.php';
+    require 'controllers/home.php';
+  } else if ($_GET['action'] == 'add_game') {
+    require 'controllers/add_game.php';
+  } else if ($_GET['action'] == 'classification') {
+    require 'controllers/classification.php';
+  } else if ($_GET['action'] == 'profile') {
+    require 'controllers/profile.php';
+  } else if ($_GET['action'] == 'logout') {
+    session_start();
+    session_destroy();
+    header('Location: index.php');
   }
+
+
 } else {
-  require 'views/auth.php';
+  require 'controllers/auth.php';
 }
 ?>

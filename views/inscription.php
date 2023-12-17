@@ -30,8 +30,5 @@
     </form>
     <a href="index.php">Se connecter</a>
   </div>
-  <footer>
-    Game Collection - 2023 - Tous droits réservés
-  </footer>
 </body>
 </html>
