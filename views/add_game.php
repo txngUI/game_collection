@@ -69,6 +69,18 @@
           <p class="platform">PlayStation</p>
         </div>
       </div>
+      <div class="game" style="background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.94) 11%,
+      rgba(0, 0, 0, 0.78) 45%,
+      rgba(255, 255, 255, 0) 100%
+    ),url('https://imgix.bustle.com/inverse/16/f3/df/c4/874e/4810/8715/d64ccb4a70da/ledejpg.jpeg?w=400&h=300&fit=crop&crop=faces&auto=format%2Ccompress');">
+        <input type="submit" class="add-button" value="Ajouter à la bibliothèque">
+        <div class="informations">
+          <p class="name">Red Dead Redemption</p>
+          <p class="platform">PlayStation</p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
