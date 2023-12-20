@@ -12,6 +12,8 @@ if (isset($_GET['action'])) {
     require 'controllers/add_game.php';
   } else if ($_GET['action'] == 'add_game_form') {
     require 'controllers/add_game_form.php';
+  } else if ($_GET['action'] == 'update_game') {
+    require 'controllers/update_game.php';
   } else if ($_GET['action'] == 'classification') {
     require 'controllers/classification.php';
   } else if ($_GET['action'] == 'profile') {
