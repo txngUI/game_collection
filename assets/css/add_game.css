@@ -102,3 +102,57 @@ body {
   font-weight: 700;
   margin: 0;
 }
+h1 {
+  color: #ffffff;
+}
+.container-form {
+  margin: 0 120px;
+}
+.container-form p {
+  color: #ffffff;
+  font-size: 12px;
+}
+.form-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+.form-group input {
+  width: 300px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: #2b2f40;
+  border: none;
+  padding-left: 15px;
+}
+.date {
+  color: #ffffff;
+}
+.checkbox {
+  display: flex;
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+.checkbox label {
+  color: #ffffff;
+  margin-left: 5px;
+}
+.checkboxes p {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.form-group textarea {
+  width: 50%;
+  height: 51px;
+  border-radius: 5px;
+  resize: none;
+  background-color: #2b2f40;
+  border: none;
+  padding-left: 15px;
+  padding-top: 10px;
+}

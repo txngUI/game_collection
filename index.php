@@ -10,6 +10,8 @@ if (isset($_GET['action'])) {
     require 'controllers/home.php';
   } else if ($_GET['action'] == 'add_game') {
     require 'controllers/add_game.php';
+  } else if ($_GET['action'] == 'add_game_form') {
+    require 'controllers/add_game_form.php';
   } else if ($_GET['action'] == 'classification') {
     require 'controllers/classification.php';
   } else if ($_GET['action'] == 'profile') {
@@ -19,8 +21,6 @@ if (isset($_GET['action'])) {
     session_destroy();
     header('Location: index.php');
   }
-
-
 } else {
   require 'controllers/auth.php';
 }
