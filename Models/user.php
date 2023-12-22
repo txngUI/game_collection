@@ -31,7 +31,7 @@ function dbConnect(){
 
     }
     $bdd = dbConnect();
-    $id=getMaxIdUser();
+    $id= getMaxIdUser();
     $mail="test@test.test";
     $password = password_hash("sha256",$password);
 
@@ -43,7 +43,7 @@ function dbConnect(){
         'surname'=>$surname
     );
 
-    $bdd_insert_request = $bdd->prepare('INSERT INTO user  VALUES (:id,:name,:mail,:password,:surname)');
+    $bdd_insert_request = $bdd->prepare('INSERT INTO utilisateur  VALUES (:id,:name,:mail,:password,:surname)');
     $result =  $bdd_insert_request->execute($new_user);
  }
 
