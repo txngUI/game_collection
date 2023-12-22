@@ -22,8 +22,5 @@
     </form>
     <a href="index.php?action=register">S'inscrire</a>
   </div>
-  <footer>
-    Game Collection - 2023 - Tous droits réservés
-  </footer>
 </body>
 </html>
