@@ -9,7 +9,7 @@ function dbConnect(){
     return $bdd;
  }
 
- function getMaxIdUser()
+function getMaxIdUser()
 {
     $bdd = dbConnect();
     $maxQuery = $bdd->query('SELECT COUNT(id_user) AS "nb" FROM utilisateur');
@@ -40,7 +40,7 @@ function dbConnect(){
  }
 
  function connection($mail,$password) {
-    //$password = hash("sha256",$password);
+    $password = hash("sha256",$password);
 
     $bdd = dbConnect();
     $query = $bdd -> query('SELECT mdp_user,id_user,mdp_user FROM utilisateur WHERE mail_user='.$mail);
