@@ -38,4 +38,18 @@ function dbConnect(){
     $bdd_insert_request = $bdd->prepare('INSERT INTO utilisateur (id_user,pren_user,mail_user,mdp_user,nom_user)  VALUES (:id,:pren,:mail,:password,:surname)');
     $result =  $bdd_insert_request->execute($new_user);
  }
+
+ function connection($mail,$password) {
+    //$password = hash("sha256",$password);
+
+    $bdd = dbConnect();
+    $query = $bdd -> query('SELECT mdp_user,id_user,mdp_user FROM utilisateur WHERE mail_user='.$mail);
+    $users = $query->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($users as $user) {
+        if ($password == $user['mdp_user']) {
+            session_start();
+            $_SESSION["id_user"] = $user['id_user'];
+        }
+    }
+ }
 ?>
