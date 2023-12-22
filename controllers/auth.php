@@ -8,8 +8,6 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
   $email = htmlspecialchars($_POST["email"]);
   $password = htmlspecialchars($_POST["password"]);
 
-  var_dump($email);
-
   $valueError = connection($email,$password);
 
   if (!$valueError){
