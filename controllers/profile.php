@@ -2,8 +2,7 @@
 
   require './Models/profile.php';
 
-  //$profile = getProfile($_SESSION['id_user']);
-  $profile = getProfile(1);
+  $profile = getProfile($_SESSION['id_user']);
 
   $error = '';
   
@@ -16,8 +15,6 @@
       updateProfile($profile['id_user'],$_POST['nom_user'],$_POST['pren_user'],$_POST['mail_user'],$_POST['mdp_user']);
       header('Location: index.php?page=profile');
     }
-    
-    // updateProfile($_SESSION['id_user'],$_POST['nom_user'],$_POST['pren_user'],$_POST['mail_user'],$_POST['mdp_user']);
   }
 
   require './views/header.php';
