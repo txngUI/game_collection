@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <h1>Se connecter a Game Collection</h1>
-    <form action="index.php" method="post">
+    <form action="" method="post">
       <div class="input">
         <label for="name">Nom</label>
         <input type="text" name="name" id="name" required>
@@ -30,7 +30,7 @@
         <label for="confirmed-password">Confirmation du mot de passe</label>
         <input type="password" name="confirmed-password" id="confirmed-password" required>  
       </div>
-      <input class="submit" type="submit" value="S'inscrire">
+      <input class="submit" type="submit" value="S'inscrire"  >
       <?php if ($valueError){
         echo "Votre mot de passe de confirmation est mauvais";
       }

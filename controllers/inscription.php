@@ -4,7 +4,7 @@ require './Models/user.php';
 
 $valueError = 0;
 
-if (isset($_POST["name"]) && isset($_POST["surname"]) && isset($_POST["password"])&& isset($_POST["email"])&&isset($_POST["confirmed-password"]) && isset($_POST["confirmed-password"])){
+if (isset($_POST["name"]) && isset($_POST["surname"]) && isset($_POST["password"])&& isset($_POST["email"])&& isset($_POST["confirmed-password"])){
     $name = htmlspecialchars($_POST["name"]);
     $surname = htmlspecialchars($_POST["surname"]);
     $password = htmlspecialchars($_POST["password"]);
