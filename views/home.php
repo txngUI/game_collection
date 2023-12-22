@@ -75,6 +75,21 @@
           <p class="game-plateform">Jeu trop cool</p>
         </div>
       </div> 
+      <div class="game" style="background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.94) 11%,
+      rgba(0, 0, 0, 0.78) 45%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url('https://cdn1.epicgames.com/0584d2013f0149a791e7b9bad0eec102/offer/GTAV_EGS_Artwork_2560x1440_Landscaped%20Store-2560x1440-79155f950f32c9790073feaccae570fb.jpg') center; background-size: cover;">
+        <div class="informations">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <p class="game-name">GTA 5</p>
+            <p class="game-times-played">0 h</p>
+          </div>
+          <p class="game-plateform">Jeu trop cool</p>
+        </div>
+      </div> 
     </div>
   </div>
 </body>

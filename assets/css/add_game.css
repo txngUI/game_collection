@@ -54,7 +54,6 @@ body {
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .game {
   width: 391px;
