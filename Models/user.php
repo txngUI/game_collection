@@ -9,9 +9,33 @@ function dbConnect(){
     return $bdd;
  }
 
- function createAccount() {
+ function getMaxIdUser()
+{
     $bdd = dbConnect();
-    
+    $maxQuery = $bdd->query('SELECT Id_user FROM utilisateur');
+    $users = $maxQuery->fetchAll(PDO::FETCH_ASSOC);
+    $maxNombre = -1;
+    foreach ($users as $value) {
+        $nombre = intval($value["Id_user"]);
+        if ($nombre > $maxNombre) {
+            $maxNombre = $nombre;
+        }
+    }
+    return $maxNombre;
+}
+
+
+ function createAccount($name,$surname,$password,$confirmedPassword) {
+    if ($password != $confirmedPassword) {
+        return -1;
+
+    }
+    $bdd = dbConnect();
+    $id=getMaxIdUser();
+    $mail="test@test.test";
+    $password = password_hash("sha256",$password);
+    $bdd_insert_request = $bdd->prepare('INSERT INTO user  VALUES ($id,$name,$mail,$password,$surname)');
+    $result =  $bdd_insert_request->execute();
  }
 
 ?>
