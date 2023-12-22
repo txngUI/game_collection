@@ -1,14 +1,16 @@
 <?php
 require './Models/user.php';
 
-$erreur = 0;
+$valueError = 0;
 
 if(isset($_POST["email"]) && isset($_POST["password"])){
 
   $email = htmlspecialchars($_POST["email"]);
   $password = htmlspecialchars($_POST["password"]);
 
-  $valueError = connection($mail,$password);
+  var_dump($email);
+
+  $valueError = connection($email,$password);
 
   if (!$valueError){
     header("Location: index.php?action=home");
