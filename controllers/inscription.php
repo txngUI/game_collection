@@ -5,11 +5,11 @@ require './Models/user.php';
 $valueError = 0;
 
 if (isset($_POST["name"]) && isset($_POST["surname"]) && isset($_POST["password"])&& isset($_POST["email"])&&isset($_POST["confirmed-password"]) && isset($_POST["confirmed-password"])){
-    $name = $_POST["name"];
-    $surname = $_POST["surname"];
-    $password = $_POST["password"];
-    $confirmpassword = $_POST["confirmed-password"];
-    $email = $_POST["email"];
+    $name = htmlspecialchars($_POST["name"]);
+    $surname = htmlspecialchars($_POST["surname"]);
+    $password = htmlspecialchars($_POST["password"]);
+    $confirmpassword = htmlspecialchars($_POST["confirmed-password"]);
+    $email = htmlspecialchars($_POST["email"]);
     
     $valueError = createAccount($name,$surname,$password,$confirmpassword,$email);
 
