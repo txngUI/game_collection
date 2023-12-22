@@ -13,6 +13,8 @@ if (isset($_POST["name"]) && isset($_POST["surname"]) && isset($_POST["password"
     
     $valueError = createAccount($name,$surname,$password,$confirmpassword,$email);
 
+    header("Location: index.php?action=home");
+
 }
 
 require './views/inscription.php';
