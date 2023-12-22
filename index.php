@@ -5,10 +5,6 @@ $dotenv->load();
 
 if (isset($_GET['action'])) {
   if ($_GET['action'] == 'register') {
-    require 'views/inscription.php';
-  }
-} else {
-  require 'views/auth.php';
     require 'controllers/inscription.php';
   } else if ($_GET['action'] == 'home') {
     require 'controllers/home.php';
