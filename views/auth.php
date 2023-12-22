@@ -20,7 +20,7 @@
       </div>
       <input class="submit" type="submit" value="Se connecter">
     </form>
-    <a href="index.php?action=register">S'inscrire</a>
+    <a href="register">S'inscrire</a>
   </div>
 </body>
 </html>
