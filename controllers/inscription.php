@@ -1,6 +1,6 @@
 <?php
 
-require './Models/user.php';
+require '../Models/user.php';
 
 $valueError = 0;
 
