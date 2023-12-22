@@ -27,15 +27,24 @@ function dbConnect(){
 
  function createAccount($name,$surname,$password,$confirmedPassword) {
     if ($password != $confirmedPassword) {
-        return -1;
+        return 1;
 
     }
     $bdd = dbConnect();
     $id=getMaxIdUser();
     $mail="test@test.test";
     $password = password_hash("sha256",$password);
-    $bdd_insert_request = $bdd->prepare('INSERT INTO user  VALUES ($id,$name,$mail,$password,$surname)');
-    $result =  $bdd_insert_request->execute();
+
+    $new_user = array(
+        'id'=>$id,
+        'pren'=>$name,
+        'mail'=>$mail,
+        'password'=>$password,
+        'surname'=>$surname
+    );
+
+    $bdd_insert_request = $bdd->prepare('INSERT INTO user  VALUES (:id,:name,:mail,:password,:surname)');
+    $result =  $bdd_insert_request->execute($new_user);
  }
 
 ?>
