@@ -25,7 +25,7 @@ function dbConnect(){
     $bdd = dbConnect();
 
     $id= getMaxIdUser();
-    //$password = hash("sha256",$password);
+    $password = hash("sha256",$password);
 
     $new_user = array(
         'id'=>$id,
