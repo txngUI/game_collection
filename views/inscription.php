@@ -31,10 +31,11 @@
         <input type="password" name="confirmed-password" id="confirmed-password" required>  
       </div>
       <input class="submit" type="submit" value="S'inscrire"  >
-      <?php if ($valueError){
-        echo "Votre mot de passe de confirmation est mauvais";
-      }
-      ?>
+      <div class="error">
+        <?php if ($valueError){
+          echo "Votre mot de passe ou identifiant est mauvais";
+        }?>
+      </div>
     </form>
     <a href="index.php">Se connecter</a>
   </div>

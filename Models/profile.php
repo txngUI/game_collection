@@ -17,22 +17,25 @@ function getProfile($id){
   return $profile;
 }
 
-function updateProfile($id,$nom,$prenom,$email,$password){
-  $bdd = dbConnect();
-  $req = $bdd->prepare('UPDATE UTILISATEUR SET nom_user= ?, pren_user = ?, mail_user = ?, mdp_user = ? WHERE id_user = ?');
-  $req->execute(array($nom,$prenom,$email,$password,$id));
+function updateProfile($id, $nom, $prenom, $email, $password) {
+    $bdd = dbConnect();
+
+    $new_user = array(
+        'id'=>$id,
+        'pren'=>$prenom,
+        'mail'=>$email,
+        'password'=>$password,
+        'surname'=>$nom
+    );
+
+    $bdd_insert_request = $bdd->prepare('UPDATE utilisateur SET pren_user = :pren, mail_user = :mail, mdp_user = :password, nom_user = :surname  WHERE id_user = :id');
+    $result =  $bdd_insert_request->execute($new_user);
 }
+
 
 function deleteProfile($id){
   $bdd = dbConnect();
   $req = $bdd->prepare('DELETE FROM UTILISATEUR WHERE id_user = ?');
   $req->execute(array($id));
 }
-
-function logout(){
-  session_start();
-  session_destroy();
-  header('Location: ../index.php');
-}
-
 ?>

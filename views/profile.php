@@ -22,7 +22,7 @@
       </div>
       <div class="input">
         <label for="email">Email :</label>
-        <input type="email" name="email" id="email" value="<?php echo $profile['mail_user'] ?>" required>
+        <input type="text" name="email" id="email" value="<?php echo $profile['mail_user'] ?>" required>
       </div>
       <div class="input">
         <label for="password">Mot de passe :</label>
@@ -31,20 +31,22 @@
       <div class="input">
         <label for="confirmed-password">Confirmation du mot de passe :</label>
         <input type="password" name="confirmed-password" id="confirmed-password" placeholder="Confirmation du mot de passe" required>
-      </div>
-      <div class="error">
-        <?php echo $error ?>
+        <div class="error">
+          <?php echo $error ?>
+        </div>
       </div>
       <div class="submit">
-        <input type="submit" class="submit"value="MODIFIER">
+        <input type="submit" class="submit" name="action" value="MODIFIER">
       </div>
     </form>
-    <form >
+    <form method="post">
       <div class="submit">
-        <input type="submit" class="submit"value="SUPPRIMER MON COMPTE">
+        <input type="submit" class="submit" name="action" value="SUPPRIMER MON COMPTE">
       </div>
+    </form>
+    <form method="post">
       <div class="submit">
-        <input type="submit" class="submit"value="SE DECONNECTER">
+        <input type="submit" class="submit" name="action" value="SE DECONNECTER">
       </div>
     </form>
   </div>

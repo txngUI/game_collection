@@ -20,9 +20,12 @@
       </div>
       <input class="submit" type="submit" value="Se connecter">
 
-      <?php if ($valueError){
-        echo "Votre mot de passe ou identifiant est mauvais";
-      }?>
+      <div class="error">
+        <?php if ($valueError){
+          echo "Votre mot de passe ou identifiant est mauvais";
+        }?>
+      </div>
+     
     </form>
     <a href="register">S'inscrire</a>
   </div>
