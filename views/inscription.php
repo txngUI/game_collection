@@ -19,6 +19,10 @@
         <input type="text" name="surname" id="surname" required>  
       </div>
       <div class="input top" style="margin-top: 15px;">
+        <label for="email">Adresse Mail</label>
+        <input type="text" name="email" id="email" required>  
+      </div>
+      <div class="input top" style="margin-top: 15px;">
         <label for="password">Mot de passe</label>
         <input type="password" name="password" id="password" required>  
       </div>
