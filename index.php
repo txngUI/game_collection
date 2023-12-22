@@ -25,5 +25,6 @@ if (isset($_GET['action'])) {
   }
 } else {
   require 'controllers/auth.php';
-}
+} 
+
 ?>
