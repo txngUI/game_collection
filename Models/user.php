@@ -49,6 +49,8 @@ function getMaxIdUser()
         if ($password == $user['mdp_user']) {
             session_start();
             $_SESSION["id_user"] = $user['id_user'];
+        } else {
+            return 1;
         }
     }
  }
