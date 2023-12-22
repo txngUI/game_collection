@@ -12,28 +12,20 @@ function dbConnect(){
  function getMaxIdUser()
 {
     $bdd = dbConnect();
-    $maxQuery = $bdd->query('SELECT Id_user FROM utilisateur');
+    $maxQuery = $bdd->query('SELECT COUNT(id_user) AS "nb" FROM utilisateur');
     $users = $maxQuery->fetchAll(PDO::FETCH_ASSOC);
-    $maxNombre = -1;
-    foreach ($users as $value) {
-        $nombre = intval($value["Id_user"]);
-        if ($nombre > $maxNombre) {
-            $maxNombre = $nombre;
-        }
-    }
-    return $maxNombre;
+    return $users[0]['nb'];
 }
 
 
- function createAccount($name,$surname,$password,$confirmedPassword) {
+ function createAccount($name,$surname,$password,$confirmedPassword,$mail) {
     if ($password != $confirmedPassword) {
         return 1;
-
     }
     $bdd = dbConnect();
+
     $id= getMaxIdUser();
-    $mail="test@test.test";
-    $password = password_hash("sha256",$password);
+    //$password = hash("sha256",$password);
 
     $new_user = array(
         'id'=>$id,
@@ -43,8 +35,7 @@ function dbConnect(){
         'surname'=>$surname
     );
 
-    $bdd_insert_request = $bdd->prepare('INSERT INTO utilisateur  VALUES (:id,:name,:mail,:password,:surname)');
+    $bdd_insert_request = $bdd->prepare('INSERT INTO utilisateur (id_user,pren_user,mail_user,mdp_user,nom_user)  VALUES (:id,:pren,:mail,:password,:surname)');
     $result =  $bdd_insert_request->execute($new_user);
  }
-
 ?>
