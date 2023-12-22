@@ -7,20 +7,6 @@ body {
   justify-content: center;
   height: 100vh;
 }
-
-.container {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: #252836;
-  width: 600px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: auto;
-}
-
 .container form {
   display: flex;
   align-items: flex-start;

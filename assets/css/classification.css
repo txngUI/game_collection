@@ -1,0 +1,31 @@
+body {
+  background-color: #211f2a;
+  font-family: "Barlow Regular", sans-serif;
+  margin: 0;
+}
+.container {
+  margin: 5% 10%;
+}
+.classification {
+  width: 100%;
+}
+.container h1,
+table {
+  color: #fff;
+}
+th {
+  text-align: left;
+  padding: 15px;
+}
+td {
+  padding: 10px;
+}
+table {
+  border-collapse: collapse;
+}
+tr:nth-child(odd) {
+  background: #211f2a;
+}
+tr {
+  background: #252836;
+}

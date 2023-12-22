@@ -25,6 +25,5 @@
   <footer>
     Game Collection - 2023 - Tous droits réservés
   </footer>
-  
 </body>
 </html>

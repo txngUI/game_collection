@@ -1,0 +1,64 @@
+body {
+  background-color: #211f2a;
+  font-family: "Barlow Regular", sans-serif;
+  margin: 0;
+}
+.header {
+  background-image: url("../images/background-header.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+.header p {
+  padding-top: 120px;
+  padding-left: 5%;
+  margin: auto;
+  color: #ffffff;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+.games {
+  margin: 0 120px;
+  color: #ffffff;
+}
+#title-game {
+  font-size: 24px;
+}
+.container-games {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  /* justify-content: space-between;*/
+}
+.game {
+  width: 391px;
+  height: 300px;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.game img {
+  width: 100%;
+}
+.informations {
+  padding: 5px 20px;
+}
+.game-name {
+  overflow: hidden;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+}
+.game-times-played {
+  width: 110px;
+  display: flex;
+  justify-content: right;
+}
