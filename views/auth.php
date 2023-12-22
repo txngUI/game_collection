@@ -22,10 +22,9 @@
 
       <?php if ($valueError){
         echo "Votre mot de passe ou identifiant est mauvais";
-      }
-      ?>
+      }?>
     </form>
-    <a href="index.php?action=register">S'inscrire</a>
+    <a href="register">S'inscrire</a>
   </div>
 </body>
 </html>
