@@ -15,6 +15,11 @@
   <div class="games">
     <p id="title-game">Mes jeux</p>
     <div class="container-games">
+      <?php
+      foreach($listeJeu as $jeu){
+        //TODO affichage de chaque jeu
+      }
+      ?>
       <div class="game" style="background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.94) 11%,
