@@ -10,7 +10,7 @@
   <div class="container-form">
     <h1>Ajouter un jeu à sa bibliothèque</h1>
     <p>Le jeu que vous souhaiter ajouter n'existe pas ! Vous pouvez le créer, celui-ci sera automatiquement ajouter a votre bibliothèque !</p>
-    <form>
+    <form method="post">
       <div class="form-group">
         <label for="name">Nom du jeu</label>
         <input type="text" id="name" name="name" placeholder="Nom du jeu" />
@@ -62,6 +62,13 @@
       <div class="submit" style="margin-top: 15px;">
         <input type="submit" class="submit"value="Ajouter le jeu">
       </div>
+
+      <div class="error">
+        <?php if ($valueError){
+          echo "Certain champs sont vide";
+        }?>
+      </div>
+
     </form>
   </div>
 </body>
