@@ -12,6 +12,11 @@
       <h1>Classement des temps passés</h1>
     </div>
     <table class="classification">
+      <?php
+      foreach($listeMeilleurJoueur as $joueur){
+        //TODO affichage de chaque joueurs + leurs infos
+      }
+      ?>
       <tr>
         <th>Joueur</th>
         <th>Temps passé</th>
