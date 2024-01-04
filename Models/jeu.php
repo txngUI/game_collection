@@ -37,5 +37,15 @@ function dbConnect(){
     $result =  $bdd_insert_request->execute($new_jeux);
  }
 
+function displayGame($idUser) {
+    $bdd = dbConnect();
+
+    $query = $bdd->query('SELECT * FROM bilioteque INNER JOIN jeux ON bilioteque.id_jeux=jeux.id_jeux WHERE id_user="'.$idUser.'"');
+
+    $playerGames = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $playerGames;
+}
+
 
 ?>
