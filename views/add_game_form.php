@@ -64,7 +64,8 @@
       </div>
 
       <div class="error">
-        <?php if ($valueError){
+        <?php
+        if ($valueError){
           echo "Certain champs sont vide";
         }?>
       </div>
