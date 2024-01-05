@@ -74,13 +74,26 @@ function addNewGame($idUser,$nom,$edit,$date,$desc,$cover,$site,$playstation,$xb
     VALUES (:id,:nom,:editeur,:date,:plateforme,:img,:desc,:url)');
     $bdd_insert_request->execute($new_jeux);
 
+    addToLibrary($idUser,$idGame);
+}
+
+function addToLibrary($idUser,$idGame) {
+    $bdd = dbConnect();
+
+    $query = $bdd->query('SELECT * FROM bilioteque WHERE id_user="'.$idUser.'" AND id_jeux="'.$idGame.'"');
+
+    $bilioteque = $query->fetchAll(PDO::FETCH_ASSOC);   
+
+    if ($bilioteque) { // il existe deja l'association dans la BDD -> on retourne le code d'erreur
+        return 1;
+    }
+
     $new_biblio = array (
         'user'=>$idUser,
-        'idJeux'=>$id,
+        'idJeux'=>$idGame,
         'tempsJeux'=>0
     );
     $bdd_insert_request = $bdd -> prepare('INSERT INTO bilioteque (id_user,id_jeux,temp_jeux) VALUES (:user,:idJeux,:tempsJeux)');
     $bdd_insert_request->execute($new_biblio);
 }
-
 ?>
