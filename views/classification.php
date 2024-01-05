@@ -17,21 +17,17 @@
         <th>Temps passé</th>
         <th>Jeu favori</th>
       </tr>
-      <tr>
-        <td>Marcel Guillaume</td>
-        <td>172 h</td>
-        <td>Read Dead Redemption</td>
+      <?php
+      foreach($listeMeilleurJoueur as $joueur){
+        ?>
+        <tr>
+        <td><?php echo $joueur['nom_user'].' '.$joueur['pren_user'] ?></td>
+        <td><?php echo $joueur['somme_temp_jeux']?> h</td>
+        <td><?php echo $joueur['nom_jeux']?></td>
       </tr>
-      <tr>
-        <td>Marcel Guillaume 2 </td>
-        <td>130 h</td>
-        <td>GTA 5</td>
-      </tr>
-      <tr>
-        <td>Mauvais goût</td>
-        <td>1000 h</td>
-        <td>Fortnite</td>
-      </tr>
+       <?php 
+      }
+      ?>
     </table>
   </div>
 </body>

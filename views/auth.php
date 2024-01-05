@@ -19,8 +19,15 @@
         <input type="password" name="password" id="password" required>  
       </div>
       <input class="submit" type="submit" value="Se connecter">
+
+      <div class="error">
+        <?php if ($valueError){
+          echo "Votre mot de passe ou identifiant est mauvais";
+        }?>
+      </div>
+     
     </form>
-    <a href="index.php?action=register">S'inscrire</a>
+    <a href="register">S'inscrire</a>
   </div>
 </body>
 </html>

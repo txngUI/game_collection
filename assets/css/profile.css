@@ -32,3 +32,14 @@ h1 {
   width: fit-content;
   margin: 10px 0;
 }
+.submit:hover {
+  cursor: pointer;
+}
+.error {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 500px;
+  text-align: center;
+  font-size: 13px;
+  color: #ff0000;
+}
