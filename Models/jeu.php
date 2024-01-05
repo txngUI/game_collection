@@ -26,6 +26,26 @@ function displayGame($idUser) {
     return $playerGames;
 }
 
+function displayAllGames() {
+    $bdd = dbConnect();
+
+    $query = $bdd->query('SELECT * FROM jeux');
+
+    $playerGames = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $playerGames;  
+}
+
+function displayGameWithNameLike($name) {
+    $bdd = dbConnect();
+
+    $query = $bdd->query('SELECT * FROM jeux WHERE nom_jeux LIKE "%'.$name.'%"');
+
+    $playerGames = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $playerGames;     
+}
+
 function addNewGame($idUser,$nom,$edit,$date,$desc,$cover,$site,$playstation,$xbox,$nintendo,$pc) {
     if (!($nom && $edit && $date && $desc && $cover)){ // vérifie que les champs ne soit pas vide
         return 1; // code erreur
