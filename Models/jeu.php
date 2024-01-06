@@ -114,7 +114,7 @@ function displayBestPlayers() {
     $query = $bdd->query('SELECT utilisateur.id_user,pren_user,nom_user,SUM(bilioteque.temp_jeux) AS "somme_temp_jeux",nom_jeux FROM bilioteque INNER JOIN utilisateur ON bilioteque.id_user=utilisateur.id_user 
     INNER JOIN (SELECT bilioteque.id_user,nom_jeux,bilioteque.temp_jeux FROM bilioteque NATURAL JOIN jeux NATURAL JOIN utilisateur INNER JOIN (SELECT id_user,MAX(temp_jeux) AS temp_jeux FROM bilioteque GROUP BY id_user) AS Temp
     ON bilioteque.id_user=Temp.id_user AND bilioteque.temp_jeux=Temp.temp_jeux) AS Temp2 ON Temp2.id_user=utilisateur.id_user
-    GROUP BY pren_user,nom_user ORDER BY bilioteque.temp_jeux DESC LIMIT 20');
+    GROUP BY pren_user,nom_user ORDER BY somme_temp_jeux DESC LIMIT 20');
 
     $games = $query->fetchAll(PDO::FETCH_ASSOC);   
 
