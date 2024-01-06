@@ -46,6 +46,16 @@ function displayGameWithNameLike($name) {
     return $playerGames;     
 }
 
+function getGameWithIdAndUser($id,$idUser) {
+    $bdd = dbConnect();
+
+    $query = $bdd->query('SELECT * FROM jeux NATURAL JOIN bilioteque WHERE id_jeux='.$id.' AND id_user='.$idUser);
+
+    $game = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $game[0];      
+}
+
 function addNewGame($idUser,$nom,$edit,$date,$desc,$cover,$site,$playstation,$xbox,$nintendo,$pc) {
     if (!($nom && $edit && $date && $desc && $cover)){ // vérifie que les champs ne soit pas vide
         return 1; // code erreur
@@ -109,5 +119,24 @@ function displayBestPlayers() {
     $games = $query->fetchAll(PDO::FETCH_ASSOC);   
 
     return $games;
+}
+
+function updateTimeGame($idGame,$idUser,$newTime) {
+    if ($newTime < 0) {
+        return 1;
+    }
+    $bdd = dbConnect();
+
+    $query = $bdd -> prepare('UPDATE bilioteque SET temp_jeux='.$newTime.' WHERE id_user='.$idUser.' AND id_jeux='.$idGame);
+
+    $query -> execute();
+}
+
+function deleteGameFromLibrary($idGame,$idUser) {
+    $bdd = dbConnect();
+
+    $query = $bdd -> prepare('DELETE FROM bilioteque WHERE id_user='.$idUser.' AND id_jeux='.$idGame);
+
+    $query -> execute();
 }
 ?>
