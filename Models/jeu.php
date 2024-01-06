@@ -74,7 +74,7 @@ function addNewGame($idUser,$nom,$edit,$date,$desc,$cover,$site,$playstation,$xb
     VALUES (:id,:nom,:editeur,:date,:plateforme,:img,:desc,:url)');
     $bdd_insert_request->execute($new_jeux);
 
-    addToLibrary($idUser,$idGame);
+    addToLibrary($idUser,$id);
 }
 
 function addToLibrary($idUser,$idGame) {
