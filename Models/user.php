@@ -45,6 +45,7 @@ function getMaxIdUser()
     $bdd = dbConnect();
     $query = $bdd -> query('SELECT mdp_user,id_user,nom_user FROM utilisateur WHERE mail_user="'.$mail.'"');
     $users = $query->fetchAll(PDO::FETCH_ASSOC);
+    if (sizeof($users)==0)return 1;
     foreach ($users as $user) {
         if ($password == $user['mdp_user']) {
             session_start();
