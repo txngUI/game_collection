@@ -18,6 +18,7 @@
       <?php
       foreach($listeJeu as $jeu){ 
         ?>
+        <a href='update_game?IdGame=<?php echo $jeu["id_jeux"]?>'>
         <div class="game" style="background: linear-gradient(
           0deg,
           rgba(0, 0, 0, 0.94) 11%,
@@ -25,7 +26,7 @@
           rgba(255, 255, 255, 0) 100%
         ),
         url('<?php echo $jeu['img_jeux'] ?>');">
-            <div class="informations">
+            <div class="informations">       
               <div style="display:flex;justify-content:space-between;align-items:center;">
                 <p class="game-name"><?php echo $jeu['nom_jeux'] ?></p>
                 <p class="game-times-played"><?php echo $jeu['temp_jeux'] ?> h</p>
@@ -33,6 +34,7 @@
               <p class="game-plateform"><?php echo $jeu['nom_plateformes'] ?></p>
             </div>
           </div> 
+          </a>
       <?php
       }
       ?>

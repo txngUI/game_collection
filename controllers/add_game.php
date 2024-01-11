@@ -5,6 +5,9 @@ require './Models/jeu.php';
 
 if (isset($_GET['name'])) {
   $listeJeux = displayGameWithNameLike($_GET['name']);
+  if (sizeof($listeJeux)==0) {
+    header("Location: add_game_form");
+  }
 } else {
   $listeJeux = displayAllGames();
 }

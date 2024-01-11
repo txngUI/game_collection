@@ -46,6 +46,16 @@ function displayGameWithNameLike($name) {
     return $playerGames;     
 }
 
+function getGameWithIdAndUser($id,$idUser) {
+    $bdd = dbConnect();
+
+    $query = $bdd->query('SELECT * FROM jeux NATURAL JOIN bilioteque WHERE id_jeux='.$id.' AND id_user='.$idUser);
+
+    $game = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $game[0];      
+}
+
 function addNewGame($idUser,$nom,$edit,$date,$desc,$cover,$site,$playstation,$xbox,$nintendo,$pc) {
     if (!($nom && $edit && $date && $desc && $cover)){ // vérifie que les champs ne soit pas vide
         return 1; // code erreur
@@ -104,10 +114,29 @@ function displayBestPlayers() {
     $query = $bdd->query('SELECT utilisateur.id_user,pren_user,nom_user,SUM(bilioteque.temp_jeux) AS "somme_temp_jeux",nom_jeux FROM bilioteque INNER JOIN utilisateur ON bilioteque.id_user=utilisateur.id_user 
     INNER JOIN (SELECT bilioteque.id_user,nom_jeux,bilioteque.temp_jeux FROM bilioteque NATURAL JOIN jeux NATURAL JOIN utilisateur INNER JOIN (SELECT id_user,MAX(temp_jeux) AS temp_jeux FROM bilioteque GROUP BY id_user) AS Temp
     ON bilioteque.id_user=Temp.id_user AND bilioteque.temp_jeux=Temp.temp_jeux) AS Temp2 ON Temp2.id_user=utilisateur.id_user
-    GROUP BY pren_user,nom_user ORDER BY bilioteque.temp_jeux DESC LIMIT 20');
+    GROUP BY pren_user,nom_user ORDER BY somme_temp_jeux DESC LIMIT 20');
 
     $games = $query->fetchAll(PDO::FETCH_ASSOC);   
 
     return $games;
+}
+
+function updateTimeGame($idGame,$idUser,$newTime) {
+    if ($newTime < 0) {
+        return 1;
+    }
+    $bdd = dbConnect();
+
+    $query = $bdd -> prepare('UPDATE bilioteque SET temp_jeux='.$newTime.' WHERE id_user='.$idUser.' AND id_jeux='.$idGame);
+
+    $query -> execute();
+}
+
+function deleteGameFromLibrary($idGame,$idUser) {
+    $bdd = dbConnect();
+
+    $query = $bdd -> prepare('DELETE FROM bilioteque WHERE id_user='.$idUser.' AND id_jeux='.$idGame);
+
+    $query -> execute();
 }
 ?>
