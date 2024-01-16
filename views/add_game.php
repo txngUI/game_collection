@@ -30,7 +30,7 @@
       rgba(0, 0, 0, 0.94) 11%,
       rgba(0, 0, 0, 0.78) 45%,
       rgba(255, 255, 255, 0) 100%
-    ),url('<?php echo $jeu['img_jeux'] ?>');">
+    ),url('<?php echo $jeu['img_jeux'] ?>');background-size:cover;">
         <form method=POST>
           <input type="hidden" name="idJeux" value='<?php echo $jeu['id_jeux'] ?>'>
           <input type="submit" class="add-button" value="Ajouter à la bibliothèque">
@@ -43,5 +43,8 @@
       <?php
       }
       ?>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

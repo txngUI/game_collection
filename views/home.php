@@ -25,7 +25,7 @@
           rgba(0, 0, 0, 0.78) 45%,
           rgba(255, 255, 255, 0) 100%
         ),
-        url('<?php echo $jeu['img_jeux'] ?>');">
+        url('<?php echo $jeu['img_jeux'] ?>');background-size:cover;">
             <div class="informations">       
               <div style="display:flex;justify-content:space-between;align-items:center;">
                 <p class="game-name"><?php echo $jeu['nom_jeux'] ?></p>
@@ -38,5 +38,7 @@
       <?php
       }
       ?>
+    </div>
+  </div>
 </body>
 </html>
